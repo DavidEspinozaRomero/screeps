@@ -6,11 +6,11 @@
  * var mod = require('variables');
  * mod.thing == 'a thing'; // true
  */
- 
- const variables = {
-     
- }
+
+const variables = {
+  test: 'test'
+}
 
 module.exports = {
-    
+  variables
 };

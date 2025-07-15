@@ -36,7 +36,7 @@ module.exports.loop = function () {
     });
 
     if (spawner.spawning) {
-        var spawningCreep = Game.creeps[spawner.spawning.name];
+        const spawningCreep = Game.creeps[spawner.spawning.name];
         spawner.room.visual.text(
             '🛠️' + spawningCreep.memory.role,
             spawner.pos.x + 1,
