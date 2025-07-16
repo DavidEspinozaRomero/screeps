@@ -39,7 +39,7 @@ module.exports.loop = function () {
 	if (!POP.isFull && !spawner.spawning) {
 		for (const role of ROLES) {
 			console.log(role, POP.alive[role], POP.expected[role], POP.alive[role] >= POP.expected[role]);
-
+			// todo: improve having a flag to know when to check POP.isFull
 			if (POP.alive[role] < POP.expected[role]) {
 				spawner.spawnCreep(getBody(actualTier, role), getName(role), { memory: { role } })
 				POP.alive[role]++;
