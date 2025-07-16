@@ -46,16 +46,6 @@ function getEnergyCapacityAvailable(spawnName = 'master') {
 	return Game.spawns[spawnName].room.energyCapacityAvailable
 }
 
-function cleanMemory() {
-	for (let name in Memory.creeps) {
-		if (!Game.creeps[name]) {
-			// Memory.creeps[name].memory.role
-			delete Memory.creeps[name];
-			console.log('Clearing non-existing creep memory:', name);
-		}
-	}
-}
-
 function getSources(creep) {
 	const sources = creep.room.find(FIND_SOURCES);
 	return sources;
@@ -80,7 +70,7 @@ function getEnergyStructuresWithFreeCapacity(creep) {
 	return targets;
 }
 
-// function getMemoryOfCreep() {}
+
 
 
 function errorHandler(err, site = 'UK') {
@@ -114,7 +104,6 @@ function handleCommonCreepError(creep, err, target) {
 module.exports = {
 	getName,
 	getBody,
-	cleanMemory,
 	getSources,
 	getSourcesBySpawn,
 	getEnergyStructuresWithFreeCapacity,
